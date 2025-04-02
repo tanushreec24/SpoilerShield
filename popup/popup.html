@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spoiler Shield</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Spoiler Shield</h1>
+      <div class="toggle-container">
+        <label class="switch">
+          <input type="checkbox" id="enableToggle">
+          <span class="slider round"></span>
+        </label>
+        <span id="statusText">Enabled</span>
+      </div>
+    </div>
+    
+    <div class="settings">
+      <div class="setting">
+        <label for="blockingMode">Blocking Mode:</label>
+        <select id="blockingMode">
+          <option value="blur">Blur (click to reveal)</option>
+          <option value="remove">Replace (with reveal button)</option>
+        </select>
+      </div>
+      
+      <div class="setting">
+        <label for="sensitivity">Sensitivity:</label>
+        <input type="range" id="sensitivity" min="0" max="10" value="7">
+        <span id="sensitivityValue">7</span>
+      </div>
+      
+      <div class="setting">
+        <label>Default Keywords:</label>
+        <div class="keywords-list" id="defaultKeywords">
+          <!-- Keywords will be populated by JS -->
+        </div>
+      </div>
+      
+      <div class="setting">
+        <label>Custom Keywords:</label>
+        <div class="custom-keywords">
+          <input type="text" id="newKeyword" placeholder="Add custom keyword...">
+          <button id="addKeyword">Add</button>
+        </div>
+        <div class="keywords-list" id="customKeywords">
+          <!-- Custom keywords will be populated by JS -->
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <button id="resetButton">Reset to Default</button>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
